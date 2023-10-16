@@ -1,2 +1,39 @@
-# the_secret_ingredient
-Source code from the RubyConf 2023 talk about flaky tests entitled The Secret Ingredient by Alan Ridlehoover
+# The Secret Ingredient
+
+*How To Understand and Resolve Just About Any Flaky Test*
+
+Flaky tests are an inscrutable bane. Hard to understand. Annoying. And, so frustrating! My personal nemesis is Daylight Saving Time. I can’t tell you how many times I’ve tripped over it. Let’s just say I was well into the “shame on me” part of that relationship, until I discovered the secret ingredient that nearly all flaky tests have in common. Turns out they only seem inscrutable. It really is possible to understand and resolve just about any flaky test.
+
+---
+
+This repository contains the source code for the RubyConf 2023 talk on flaky tests entitled [*The Secret Ingredient*](https://rubyconf-2023.sessionize.com/session/527141).
+
+The talk covers where flakiness comes from, how to recognize it, and how to resolve it, including the following topics:
+
+* Non-Determinism
+  * The System Clock
+  * Random Numbers
+  * Network Connections
+* Order Dependence
+  * Shared State
+* Race Conditions
+  * Asyncronous IO
+
+This repository is organized as a series of commite to a class called `RubyConf` and its associated specs. You can follow along one commit at a time, or via the following tags:
+
+* step-01 / flaky-system-clock
+* step-02 / resolved-system-clock
+* step-03 / flaky-random-number
+* step-04 / resolved-random-number
+* step-05 / flaky-network-connection
+* step-06 / resolved-network-connection
+* step-07 / flaky-shared-state
+* step-08 / resolved-shared-state
+* step-09 / flaky-async-io
+* step-10 / resolved-async-io
+
+---
+
+Thanks for stopping by. I'll post links to the deck and the video as they are made availble.
+
+ ~ Alan
