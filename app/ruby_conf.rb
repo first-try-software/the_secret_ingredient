@@ -1,6 +1,10 @@
 require "time"
 
 class RubyConf
+  def raffle_winner?(attendee_number)
+    attendee_number == raffle_winner
+  end
+
   def raffle_winner
     @raffle_winner ||= Random.rand(1...500)
   end

@@ -23,14 +23,15 @@ This repository is organized as a series of commite to a class called `RubyConf`
 
 * step-01 / flaky-system-clock
 * step-02 / resolved-system-clock
-* step-03 / flaky-random-number
-* step-04 / resolved-random-number
-* step-05 / flaky-network-connection
-* step-06 / resolved-network-connection
-* step-07 / flaky-shared-state
-* step-08 / resolved-shared-state
-* step-09 / flaky-async-io
-* step-10 / resolved-async-io
+* step-03 / working-random-number
+* step-04 / flaky-random-number
+* step-05 / resolved-random-number
+* step-06 / flaky-network-connection
+* step-07 / resolved-network-connection
+* step-08 / flaky-shared-state
+* step-09 / resolved-shared-state
+* step-10 / flaky-async-io
+* step-11 / resolved-async-io
 
 ---
 
