@@ -3,12 +3,16 @@ require_relative "../app/ruby_conf"
 RSpec.describe RubyConf do
   describe "#raffle_winner?" do
     it "returns false when the attendee did not win the raffle" do
+      allow(Random).to receive(:rand).and_return(42)
+
       ruby_conf = RubyConf.new
 
-      expect(ruby_conf.raffle_winner?(42)).to be false
+      expect(ruby_conf.raffle_winner?(1)).to be false
     end
 
     it "returns true when the attendee won the raffle" do
+      allow(Random).to receive(:rand).and_return(42)
+
       ruby_conf = RubyConf.new
 
       expect(ruby_conf.raffle_winner?(42)).to be true
