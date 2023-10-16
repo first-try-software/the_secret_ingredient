@@ -4,12 +4,18 @@ require "httparty"
 require_relative "cache"
 
 class RubyConf
+  attr_reader :cache
+
+  def initialize(cache: Cache.instance)
+    @cache = cache
+  end
+
   def favorite_session=(title)
-    Cache.instance.set(:favorite_session, title)
+    cache.set(:favorite_session, title)
   end
 
   def favorite_session
-    Cache.instance.get(:favorite_session) || "Matz's Keynote"
+    cache.get(:favorite_session) || "Matz's Keynote"
   end
 
   def session_description(title:)

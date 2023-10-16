@@ -3,7 +3,9 @@ require_relative "../app/ruby_conf"
 RSpec.describe RubyConf do
   describe "#favorite_session" do
     it "sets a default favorite session" do
-      ruby_conf = RubyConf.new
+      cache = Cache.new
+
+      ruby_conf = RubyConf.new(cache: cache)
 
       expect(ruby_conf.favorite_session).to eq("Matz's Keynote")
     end
@@ -11,15 +13,15 @@ RSpec.describe RubyConf do
 
   describe "#favorite_session=" do
     it "caches my favorite session" do
-      ruby_conf_1 = RubyConf.new
+      cache = Cache.new
+      ruby_conf_1 = RubyConf.new(cache: cache)
       ruby_conf_1.favorite_session = "The Secret Ingredient"
 
-      ruby_conf_2 = RubyConf.new
+      ruby_conf_2 = RubyConf.new(cache: cache)
 
       expect(ruby_conf_2.favorite_session).to eq("The Secret Ingredient")
     end
   end
-
   describe "#session_description" do
     it "fetches the session description" do
         url = "https://rubyconf-2023.sessionize.com/api/schedule"
