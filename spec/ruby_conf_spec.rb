@@ -5,24 +5,38 @@ RSpec.describe RubyConf do
     it "increments the attendee count when someone reserves a seat" do
       mickey = "Mickey Mouse"
 
+      io = StringIO.new
+      allow(File).to receive(:open).and_yield(io)
+
       ruby_conf = RubyConf.new
 
-      expect { ruby_conf.reserve_seat(name: mickey) }
-        .to change { ruby_conf.attendees.count }.by(1)
+      expect {
+        ruby_conf.reserve_seat(name: mickey)
+      }.to change {
+        io.rewind
+        ruby_conf.attendees.count
+      }.by(1)
     end
 
     it "reservations are persisted between calls" do
       donald = "Donald Duck"
       goofy = "Goofy"
 
+      io = StringIO.new
+      allow(File).to receive(:open).and_yield(io)
+
       ruby_conf = RubyConf.new
 
-      expect do
+      expect {
         ruby_conf.reserve_seat(name: donald)
         ruby_conf.reserve_seat(name: goofy)
-      end.to change { ruby_conf.attendees.count }.by(2)
+      }.to change {
+        io.rewind
+        ruby_conf.attendees.count
+      }.by(2)
     end
   end
+
 
   describe "#favorite_session" do
     it "sets a default favorite session" do
