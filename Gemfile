@@ -7,3 +7,4 @@ gem "simplecov"
 gem "parallel_rspec"
 
 gem "timecop"
+gem "httparty"

@@ -1,6 +1,18 @@
 require_relative "../app/ruby_conf"
 
 RSpec.describe RubyConf do
+  describe "#session_description" do
+    it "fetches the session description" do
+      title = "The Secret Ingredient"
+      description = "Flaky tests are an inscrutable bane."
+
+      ruby_conf = RubyConf.new
+
+      expect(ruby_conf.session_description(title: title))
+        .to include(description)
+    end
+  end
+
   describe "#raffle_winner?" do
     it "returns false when the attendee did not win the raffle" do
       allow(Random).to receive(:rand).and_return(42)
