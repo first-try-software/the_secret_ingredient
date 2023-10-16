@@ -4,10 +4,28 @@ require "httparty"
 require_relative "cache"
 
 class RubyConf
+  RESERVATIONS_FILE = "reservations.txt"
+
   attr_reader :cache
 
   def initialize(cache: Cache.instance)
     @cache = cache
+  end
+
+  def reserve_seat(name:)
+    File.open(RESERVATIONS_FILE, "a") do |file|
+      file.puts(name)
+    end
+  end
+
+  def attendees
+    attendees = []
+
+    File.open(RESERVATIONS_FILE, "a+") do |file|
+      file.each_line { |line| attendees << line }
+    end
+
+    attendees
   end
 
   def favorite_session=(title)

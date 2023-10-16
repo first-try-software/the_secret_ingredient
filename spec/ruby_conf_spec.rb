@@ -1,6 +1,29 @@
 require_relative "../app/ruby_conf"
 
 RSpec.describe RubyConf do
+  describe "#reserve_seat" do
+    it "increments the attendee count when someone reserves a seat" do
+      mickey = "Mickey Mouse"
+
+      ruby_conf = RubyConf.new
+
+      expect { ruby_conf.reserve_seat(name: mickey) }
+        .to change { ruby_conf.attendees.count }.by(1)
+    end
+
+    it "reservations are persisted between calls" do
+      donald = "Donald Duck"
+      goofy = "Goofy"
+
+      ruby_conf = RubyConf.new
+
+      expect do
+        ruby_conf.reserve_seat(name: donald)
+        ruby_conf.reserve_seat(name: goofy)
+      end.to change { ruby_conf.attendees.count }.by(2)
+    end
+  end
+
   describe "#favorite_session" do
     it "sets a default favorite session" do
       cache = Cache.new
@@ -22,6 +45,7 @@ RSpec.describe RubyConf do
       expect(ruby_conf_2.favorite_session).to eq("The Secret Ingredient")
     end
   end
+
   describe "#session_description" do
     it "fetches the session description" do
         url = "https://rubyconf-2023.sessionize.com/api/schedule"
