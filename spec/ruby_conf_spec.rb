@@ -3,13 +3,23 @@ require_relative "../app/ruby_conf"
 RSpec.describe RubyConf do
   describe "#session_description" do
     it "fetches the session description" do
-      title = "The Secret Ingredient"
-      description = "Flaky tests are an inscrutable bane."
+        url = "https://rubyconf-2023.sessionize.com/api/schedule"
+        title = "The Secret Ingredient"
+        description = "Flaky tests are an inscrutable bane."
 
-      ruby_conf = RubyConf.new
+        body = {
+          sessions: [
+            { title: "Title A", description: "Description 1." },
+            { title: title, description: description },
+            { title: "Title B", description: "Description 2." }
+          ]
+        }
+        response = instance_double("response", body: body.to_json)
+        allow(HTTParty).to receive(:get).with(url).and_return(response)
 
-      expect(ruby_conf.session_description(title: title))
-        .to include(description)
+        ruby_conf = RubyConf.new
+
+        expect(ruby_conf.session_description(title: title)).to include(description)
     end
   end
 
