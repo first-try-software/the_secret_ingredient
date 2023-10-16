@@ -1,7 +1,17 @@
 require "time"
 require "httparty"
 
+require_relative "cache"
+
 class RubyConf
+  def favorite_session=(title)
+    Cache.instance.set(:favorite_session, title)
+  end
+
+  def favorite_session
+    Cache.instance.get(:favorite_session) || "Matz's Keynote"
+  end
+
   def session_description(title:)
     response = HTTParty.get("https://rubyconf-2023.sessionize.com/api/schedule")
 
