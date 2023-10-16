@@ -1,6 +1,14 @@
 require_relative "../app/ruby_conf"
 
 RSpec.describe RubyConf do
+  describe "#raffle_winner" do
+    it "returns a number between 1 and 500" do
+      ruby_conf = RubyConf.new
+
+      expect(ruby_conf.raffle_winner).to be_between(1, 500)
+    end
+  end
+
   describe "#in_progress?" do
     it "returns false before RubyConf" do
       ruby_conf = RubyConf.new
