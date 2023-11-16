@@ -11,15 +11,10 @@ This repository contains the source code for the RubyConf 2023 talk on flaky tes
 The talk covers where flakiness comes from, how to recognize it, and how to resolve it, including the following topics:
 
 * Non-Determinism
-  * The System Clock
-  * Random Numbers
-  * Network Connections
 * Order Dependence
-  * Shared State
 * Race Conditions
-  * Asyncronous IO
 
-This repository is organized as a series of commite to a class called `RubyConf` and its associated specs. You can follow along one commit at a time, or via the following tags:
+This repository is organized as a series of commits to a class called `RubyConf` and its associated specs. You can follow along one commit at a time, or via the following tags:
 
 * step-01 / flaky-system-clock
 * step-02 / resolved-system-clock
