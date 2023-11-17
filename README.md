@@ -32,6 +32,10 @@ This repository is organized as a series of commits to a class called `RubyConf`
 
 Here the deck: [The Secret Ingredient](https://speakerdeck.com/aridlehoover/the-secret-ingredient-how-to-understand-and-resolve-just-about-any-flaky-test).
 
+Please share feedback! You can reach me here:
+* [Mastodon](https://ruby.social/@alan)
+* [LinkedIn](https://linkedin.com/in/aridlehoover)
+
 Thanks for stopping by. I'll post links to the deck and the video as they are made availble.
 
  ~ Alan
