@@ -6,7 +6,21 @@ Flaky tests are an inscrutable bane. Hard to understand. Annoying. And, so frust
 
 ---
 
+Hey you! Thanks for stopping by!
+
 This repository contains the source code for the RubyConf 2023 talk on flaky tests entitled [*The Secret Ingredient*](https://rubyconf-2023.sessionize.com/session/527141).
+
+Here the deck: [The Secret Ingredient Slides](https://speakerdeck.com/aridlehoover/the-secret-ingredient-how-to-understand-and-resolve-just-about-any-flaky-test).
+
+Please share your feedback! You can reach me here:
+* [Mastodon](https://ruby.social/@alan)
+* [LinkedIn](https://linkedin.com/in/aridlehoover)
+
+I'll post a link to the video when it is made availble.
+
+~ Alan
+
+---
 
 The talk covers where flakiness comes from, how to recognize it, and how to resolve it, including the following topics:
 
@@ -27,15 +41,3 @@ This repository is organized as a series of commits to a class called `RubyConf`
 * step-09 / resolved-shared-state
 * step-10 / flaky-async-io
 * step-11 / resolved-async-io
-
----
-
-Here the deck: [The Secret Ingredient](https://speakerdeck.com/aridlehoover/the-secret-ingredient-how-to-understand-and-resolve-just-about-any-flaky-test).
-
-Please share feedback! You can reach me here:
-* [Mastodon](https://ruby.social/@alan)
-* [LinkedIn](https://linkedin.com/in/aridlehoover)
-
-Thanks for stopping by. I'll post links to the deck and the video as they are made availble.
-
- ~ Alan
