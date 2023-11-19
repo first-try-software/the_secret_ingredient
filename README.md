@@ -10,7 +10,7 @@ Hey you! Thanks for stopping by!
 
 This repository contains the source code for the RubyConf 2023 talk on flaky tests entitled [*The Secret Ingredient*](https://rubyconf-2023.sessionize.com/session/527141).
 
-Here the deck: [The Secret Ingredient Slides](https://speakerdeck.com/aridlehoover/the-secret-ingredient-how-to-understand-and-resolve-just-about-any-flaky-test).
+Here the deck: [The Secret Ingredient Slides](https://speakerdeck.com/aridlehoover/the-secret-ingredient-how-to-understand-and-resolve-just-about-any-flaky-test)
 
 Please share your feedback! You can reach me here:
 * [Mastodon](https://ruby.social/@alan)
